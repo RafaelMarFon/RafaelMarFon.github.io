@@ -1,32 +1,130 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>CV - Tu Nombre</title>
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-    <header class="header">
-        <!-- Mismo menú que en index.html -->
-    </header>
+/* ---------------------------- */
+/*  1. Ajustes básicos          */
+/* ---------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
 
-    <section class="contenido">
-        <h2>Curriculum Vitae</h2>
-        <h3>Educación</h3>
-        <ul>
-            <li>Doctorado en Biomate­máticas, Universidad X, 2020</li>
-        </ul>
+:root {
+  --color-bg: #f9f9f7;
+  --color-primary: #1a3d6d;   /* azul sobrio */
+  --color-accent: #7a001a;    /* acento burdeos */
+  --color-text: #212121;
+  --font-serif: "Merriweather", Georgia, "Times New Roman", serif;
+}
 
-        <h3>Publicaciones</h3>
-        <ul>
-            <li><a href="assets/pdf/paper1.pdf">Título del artículo (2023)</a></li>
-        </ul>
+html {
+  font-size: 17px;            /* ligeramente mayor para legibilidad */
+  line-height: 1.6;
+}
 
-        <a href="assets/pdf/cv_completo.pdf" class="boton">Descargar CV en PDF</a>
-    </section>
+body {
+  margin: 0;
+  font-family: var(--font-serif);
+  color: var(--color-text);
+  background: var(--color-bg);
+}
 
-    <footer>
-        <!-- Mismo footer que en index.html -->
-    </footer>
-</body>
-</html>
+/* Constrain width on large screens */
+body > header,
+body > main,
+body > footer {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+}
+
+/* ---------------------------- */
+/*  2. Encabezado               */
+/* ---------------------------- */
+.header {
+  text-align: center;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 3px solid var(--color-primary);
+}
+
+.site-title {
+  margin: 0;
+  font-size: 2.3rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  letter-spacing: 0.5px;
+}
+
+.subtitle {
+  margin-top: 0.3rem;
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: #555;
+}
+
+/* ---------------------------- */
+/*  3. Navegación               */
+/* ---------------------------- */
+.menu {
+  list-style: none;
+  margin: 1.2rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  justify-content: center;
+}
+
+.menu a {
+  text-decoration: none;
+  padding: 0.35rem 0.9rem;
+  border-radius: 0.4rem;
+  font-size: 0.95rem;
+  color: var(--color-primary);
+  transition: background 0.2s ease-in-out, color 0.2s;
+}
+
+.menu a:hover,
+.menu a:focus {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+/* ---------------------------- */
+/*  4. Sección principal        */
+/* ---------------------------- */
+.bienvenida {
+  margin-top: 2rem;
+  text-align: justify;
+}
+
+.bienvenida h2 {
+  font-size: 1.5rem;
+  color: var(--color-accent);
+  margin-bottom: 0.6rem;
+}
+
+/* ---------------------------- */
+/*  5. Pie de página            */
+/* ---------------------------- */
+footer {
+  margin-top: 2.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+  border-top: 1px solid #ccc;
+  padding-bottom: 2rem;
+}
+
+footer a {
+  color: var(--color-accent);
+}
+
+footer a:hover,
+footer a:focus {
+  text-decoration: underline;
+}
+
+/* ---------------------------- */
+/*  6. Responsividad extra      */
+/* ---------------------------- */
+@media (min-width: 1024px) {
+  html { font-size: 18px; }
+  .site-title { font-size: 2.6rem; }
+}
